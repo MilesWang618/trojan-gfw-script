@@ -5,42 +5,29 @@
 ### 使用方法
 安裝依賴(Debian/Ubuntu)
 ```
-apt-get update && apt-get install sudo whiptail curl locales -y && sudo -i
+apt-get update && apt-get install sudo whiptail curl locales -y
 ```
 安裝依賴(Centos,不推荐)
 ```
-yum update -y && yum install sudo newt curl -y && sudo -i
+yum update -y && yum install sudo newt curl -y
 ```
 運行腳本
 ```
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/johnrosen1/trojan-gfw-script/master/vps.sh)"
 ```
-![menu](https://raw.githubusercontent.com/johnrosen1/trojan-gfw-script/master/mainmenu.png)
-![choose](https://raw.githubusercontent.com/johnrosen1/trojan-gfw-script/master/3.png)
 
 #### 運行前的要求:
 1. 請 **使用root用戶運行**(sudo -i)
 2. 請在运行本脚本前先 **[购买一个域名](https://www.namesilo.com/?rid=685fb47qi)** 并 **[完成A记录 dns解析](https://dnschecker.org/)**!
 3. 請在你的控制面板上 **開放 Tcp 端口 [80](https://www.speedguide.net/port.php?port=80) 以及 [443](https://www.speedguide.net/port.php?port=443) 并关闭 Cloudflare CDN**
-4. 請不要使用阿里內網DNS(更新極其緩慢) 推薦[1.1.1.1](https://1.1.1.1/) !
-```
-echo "nameserver 1.1.1.1" > '/etc/resolv.conf'
-```
-
-5. 若使用自定义证书只需与密钥一起放置于/etc/trojan文件夹中即可，无需修改名称 。
-
-#### [Telegram](https://telegram.org/) 頻道 以及 群組
-
-### https://t.me/johnrosen1
-
-### https://t.me/trojanscript
+4. 若使用自定义证书只需与密钥一起放置于/etc/trojan文件夹中即可，无需修改名称 。
 
 ## 如果你覺得有用 , 請給star ★, 謝謝!
 #### 脚本特性支援:
 
 1. 安裝並配置 **[NGINX](https://www.nginx.com/)**
 2. 申请并续签 [let's encrypt 证书](https://letsencrypt.org/) and **全自动在证书续签完成后reload Trojan-GFW**
-3. OS 探測 **支援 [Debian](https://www.debian.org/) [Ubuntu](https://ubuntu.com/) Centos**
+3. OS 探測 **支援 [Debian](https://www.debian.org/) [Ubuntu](https://ubuntu.com/) Centos(不推荐)**
 4. [domain resolve verification](https://en.wikipedia.org/wiki/Nslookup)
 5. [iptables](https://en.wikipedia.org/wiki/Iptables)(包括 ipv6) 防火墙配置以及 [iptables-persistent](https://github.com/zertrin/iptables-persistent)
 6. 全自动生成 Trojan-GFW [客戶端配置文件](https://trojan-gfw.github.io/trojan/config) 
@@ -59,8 +46,9 @@ echo "nameserver 1.1.1.1" > '/etc/resolv.conf'
 21. ***[TLS1.3 ONLY](https://wiki.openssl.org/index.php/TLS1.3)***
 22. 手动 检查更新
 23. 完全/部分 卸載
+24. 更多懒得写了...
 
-**如果你需要更多功能, 请 open a Github issue / 提交pull request.(Centos相关issue将被列为低优先级)**
+**如果你需要更多功能, 请 open a Github issue / 提交pull request.(严禁Centos相关issue/request)**
 
 ### VPS 推薦 (无个人aff)
 
@@ -101,5 +89,4 @@ sudo ~/.acme.sh/acme.sh --cron //仅当使用let's encrypt证书是有效
 timedatectl
 iptables -L -v
 ```
-
 
